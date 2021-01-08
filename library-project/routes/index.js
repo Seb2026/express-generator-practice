@@ -18,4 +18,16 @@ router.get(`/books`, (req,res,next) => {
     })
 });
 
+router.get(`/books/:bookId`, (req,res,next) => {
+  const { bookId } = req.params;
+
+  Book.findOne(bookId)
+    .then(theBook => {
+      res.render(`book-details`, {book: theBook})
+    })
+    .catch(err => {
+      console.log(`error while getting books due to ${err}`);
+    })
+});
+
 module.exports = router;

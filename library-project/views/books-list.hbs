@@ -4,6 +4,8 @@
 {{#each books}}
 <div>
   <h3>{{this.title}}</h3>
+  <p>{{this.author}}</p>
+  <a href="/books/{{_id}}">See details</a>
 </div>
 <hr>
 {{/each}}
