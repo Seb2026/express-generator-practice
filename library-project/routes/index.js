@@ -11,7 +11,7 @@ router.get('/', (req, res, next) => {
 router.get(`/books`, (req,res,next) => {
   Book.find()
     .then(allBooks => {
-      res.render(`book-list`, {books: allBooks});
+      res.render(`books-list`, {books: allBooks});
     })
     .catch(err => {
       console.log(`error while getting books due to ${err}`);
